@@ -1,10 +1,15 @@
 Climate Conference Project
 Database: https://www.db-fiddle.com/f/pxMci1sLL945KHKYvpe9W6/1
 
-LEFT JOIN: List all VIPs and their associated hotel reservations, including VIPs who may not have made a reservation.
-SELECT v.member_id, v.first_name, v.last_name, r.hotel
+--LEFT JOIN: List all VIPs and list whether they have RSVP'd for the welcome event, include VIPs who may not have made a reservation.
+SELECT v.member_id
+, v.first_name
+, v.last_name
+, r.welcome_rsvp 
 FROM vips v
-LEFT JOIN reservations r ON v.member_id = r.member_id;
+LEFT JOIN reservations r 
+ON v.member_id = r.member_id
+;
 
 INNER JOIN: Find the names of VIPs who have RSVP’d for the welcome event.
 SELECT v.first_name, v.last_name
