@@ -19,3 +19,17 @@ ON r.hotel = h.hotel_id
 WHERE hotel_name = 'Marriott'
 ;
 
+--Multiple JOINs: Retrieve the first & last names of welcome party attendees & the event type they are attending.
+SELECT r.welcome_rsvp
+, v.first_name
+, v.last_name
+, e.event_type
+FROM reservations r
+INNER JOIN vips v
+ON r.member_id = v.member_id
+INNER JOIN events e 
+ON e.event_id = v.event
+WHERE welcome_rsvp = 1
+; 
+
+
