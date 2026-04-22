@@ -41,5 +41,27 @@ FROM reservations
 WHERE dinner_rsvp = 1)
 ; 
 
+--Custom Query: Get a list of all VIPs who are attending a panel event & have RSVP'd for the thank-you dinner. 
+SELECT v.first_name
+, v.last_name
+FROM vips v
+INNER JOIN events e
+ON e.event_id = v.event
+INNER JOIN reservations r
+ON r.member_id = v.member_id
+WHERE event_type = 'Panel'
+AND welcome_rsvp = 1
+; 
+
+--Custom Query: List all the hotels & list how many reservations each hotel has. 
+SELECT h.hotel_name
+, COUNT(*) AS reservation_count
+FROM reservations r
+INNER JOIN hotels h
+ON r.hotel = h.hotel_id
+GROUP BY hotel_name
+; 
+
+
 
 
