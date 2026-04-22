@@ -32,4 +32,14 @@ ON e.event_id = v.event
 WHERE welcome_rsvp = 1
 ; 
 
+--Query with a Subquery: Find the VIPs who are attending the thank you dinner.
+SELECT first_name
+, last_name
+FROM vips
+WHERE member_id IN (SELECT member_id
+FROM reservations
+WHERE dinner_rsvp = 1)
+; 
+
+
 
