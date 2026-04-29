@@ -37,8 +37,8 @@ FROM BIT_DB.JanSales
 GROUP BY product
 
 #6. Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
-select 
-sum(Quantity), 
+SELECT 
+SUM(Quantity), 
 product, 
 sum(quantity)*price as revenue
 FROM BIT_DB.FebSales 
@@ -55,3 +55,39 @@ ON FEB.orderid=cust.order_id
 WHERE Feb.Quantity>2
 AND length(orderid) = 6 
 AND orderid <> 'Order ID'
+
+#8. We'll start with this query:
+SELECT employee_ID
+FROM employees
+
+Which of the following lines of code will complete the query listed above so that it only retrieves employee IDs (employee_ID)) that:
+1. Start with ‘14’
+2. Have a single character after ‘14’
+3. End with ‘9’
+
+A. WHERE employee_ID = '14_9'
+B. WHERE employee_ID LIKE '14_9'
+C. WHERE employee_ID LIKE 14_9
+D. WHERE employee_ID LIKE '14'_'9'
+
+B. Is the correct answer. 
+
+#9. Let’s say we need to find all orderIDs in the MarSales table from the BIT_DB database where the orderID has the characters ‘16’ in 
+the beginning, followed by one unknown character, then a ‘0’, and any number of characters for the rest.
+
+SELECT orderID
+FROM BIT_DB.MarSales
+
+Which of the following lines of code will complete the query listed above so that it only retrieves employee IDs (employee_ID)) that:
+1. Start with ‘16’
+2. Have a single character after ‘16’
+3. Followed by ‘0’
+4. And any number of characters in the last position
+
+A. WHERE orderID LIKE '16%0_'
+B. WHERE orderID LIKE '16%0%'
+C. WHERE orderID LIKE '160_%'
+D. WHERE orderID LIKE '16_0%'
+
+D. Is the correct answer. 
+
