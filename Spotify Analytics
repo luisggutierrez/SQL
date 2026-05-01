@@ -34,5 +34,13 @@ SELECT artist_name
 FROM Spotifydata 
 WHERE artist_name = 'Olivia Rodrigo'
 GROUP BY artist_name = 'Olivia Rodrigo'
+; 
 
+#Then I determined the Top 5 songs most danceable songs. 
+SELECT track_name
+, danceability
+FROM bit_db.Spotifydata
+ORDER BY danceability desc
+LIMIT 5
+;
 
