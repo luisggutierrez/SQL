@@ -34,3 +34,5 @@ SELECT artist_name
 FROM Spotifydata 
 WHERE artist_name = 'Olivia Rodrigo'
 GROUP BY artist_name = 'Olivia Rodrigo'
+
+
