@@ -44,3 +44,11 @@ ORDER BY danceability desc
 LIMIT 5
 ;
 
+#What are the top 10 songs based on popularity. 
+SELECT artist_name
+, track_name
+, popularity
+FROM bit_db.Spotifydata
+ORDER BY popularity desc
+LIMIT 10
+; 
