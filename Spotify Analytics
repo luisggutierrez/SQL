@@ -52,3 +52,18 @@ FROM bit_db.Spotifydata
 ORDER BY popularity desc
 LIMIT 10
 ; 
+
+#What is the avg energy for each artist. 
+SELECT artist_name
+, AVG(energy)
+FROM bit_db.Spotifydata
+GROUP BY artist_name
+; 
+
+#How many total artists make up the data. 
+SELECT COUNT(DISTINCT artist_name)
+FROM bit_db.Spotifydata
+; 
+
+
+
