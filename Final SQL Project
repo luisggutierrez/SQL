@@ -1,0 +1,12 @@
+#1.
+Show the Top 5 Countries with the highest sales starting from highest to lowest. 
+
+SELECT BillingCountry
+, SUM(Total) AS County_Total_Spend
+FROM chinook.invoices
+GROUP BY BillingCountry
+ORDER BY SUM(Total) desc
+LIMIT 5
+; 
+
+
