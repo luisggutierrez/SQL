@@ -9,4 +9,17 @@ ORDER BY SUM(Total) desc
 LIMIT 5
 ; 
 
+#2.
+Show the Top 3 Genres with the highest sales.
+
+SELECT g.Name
+, SUM(ii.UnitPrice*Quantity) AS Genre_Total
+FROM invoice_items ii
+INNER JOIN tracks t
+ON ii.TrackId=t.TrackId
+INNER JOIN genres g
+ON g.GenreId=t.GenreId
+GROUP BY g.Name
+ORDER BY SUM(ii.UnitPrice*Quantity) desc
+LIMIT 3
 
