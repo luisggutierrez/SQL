@@ -25,6 +25,7 @@ LIMIT 3
 
 #3.
 Show the Total Sales volume for each Sales Agent from highest to lowest.
+
 SELECT e.FirstName
 , e.LastName
 , SUM(i.Total) Total_Sales
