@@ -23,3 +23,18 @@ GROUP BY g.Name
 ORDER BY SUM(ii.UnitPrice*Quantity) desc
 LIMIT 3
 
+#3.
+Show the Total Sales volume for each Sales Agent from highest to lowest.
+SELECT e.FirstName
+, e.LastName
+, SUM(i.Total) Total_Sales
+FROM invoices i
+INNER JOIN customers c
+ON i.CustomerId=c.CustomerId
+INNER JOIN employees e
+ON c.SupportRepId=e.EmployeeId
+GROUP BY e.FirstName
+ORDER BY SUM(i.Total) desc
+
+
+
