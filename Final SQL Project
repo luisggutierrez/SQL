@@ -37,5 +37,12 @@ ON c.SupportRepId=e.EmployeeId
 GROUP BY e.FirstName
 ORDER BY SUM(i.Total) desc
 
+#4. 
+Calculate the AVG Sales for the month of January 2010 (Round your answer to the nearest hundreths place)
+
+SELECT ROUND(AVG(Total),2)
+FROM Invoices
+WHERE InvoiceDate LIKE '2010-01%'
+
 
 
