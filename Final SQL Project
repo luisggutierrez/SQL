@@ -44,5 +44,19 @@ SELECT ROUND(AVG(Total),2)
 FROM Invoices
 WHERE InvoiceDate LIKE '2010-01%'
 
+#5.
+Show the Artist Name & the Total Sales associated to each one.
+
+SELECT ar.Name
+, SUM(ii.UnitPrice*Quantity) AS Artist_Total
+FROM artists ar
+INNER JOIN albums al
+ON ar.ArtistId=al.ArtistId
+INNER JOIN tracks t
+ON t.AlbumId=al.AlbumId
+INNER JOIN invoice_items ii
+ON ii.TrackId=t.TrackId
+GROUP BY ar.Name
+
 
 
